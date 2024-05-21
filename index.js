@@ -19,15 +19,20 @@ function playSong(){
 
 bgm.addEventListener('timeupdate', ()=>{
     let percentage = Math.floor((bgm.currentTime/bgm.duration)*100)
+    
+    if(percentage===100){
+        pause.style.display = "none"
+        play.style.display = "flex"   
+    }
     progress.style.width = percentage+'%'
 })
 
-setInterval(()=>{
-    if(progress.style.width===100+'%'){
-        pause.style.display = "flex"
-        play.style.display = "none"    
-    }
-}, 1000)
+// setInterval(()=>{
+//     if(progress.style.width===100+'%'){
+//         pause.style.display = "none"
+//         play.style.display = "flex"   
+//     }
+// }, 1000)
 
 
 
